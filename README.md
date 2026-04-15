@@ -15,7 +15,7 @@
 
 This package currently exposes two password utilities:
 
-- `generateStrongPassword(length)`: generates a random password string from uppercase letters, lowercase letters, digits, and special characters.
+- `generateStrongPassword(length)`: generates a random strong password string from uppercase letters, lowercase letters, digits, and special characters.
 - `isStrongPassword(password)`: checks whether a password meets the implemented strength rules.
 
 Implemented strength rules:
@@ -26,9 +26,7 @@ Implemented strength rules:
 - contains at least one digit
 - contains at least one special character from `!@#$%^&*()_+`
 
-Important note:
-
-`generateStrongPassword()` uses the allowed character set above, but it does not guarantee that every generated password satisfies all strength rules. Because the characters are chosen randomly, you should validate the result with `isStrongPassword()` if you need to enforce those rules.
+`generateStrongPassword()` keeps generating passwords until the result satisfies all of the strength rules above.
 
 ## Installation
 
@@ -58,23 +56,16 @@ const password = generateStrongPassword(16);
 
 console.log(password);
 console.log(isStrongPassword(password));
+// true
 ```
 
-Example with validation:
+Example with invalid length:
 
 ```js
-const {
-  generateStrongPassword,
-  isStrongPassword,
-} = require("@untitltedq/password-utilities");
+const { generateStrongPassword } = require("@untitltedq/password-utilities");
 
-let password;
-
-do {
-  password = generateStrongPassword(12);
-} while (!isStrongPassword(password));
-
-console.log(password);
+generateStrongPassword(6);
+// throws Error: Password length must be at least 8 characters.
 ```
 
 ## API
@@ -88,7 +79,8 @@ Behavior:
 - default length is `12`
 - uses uppercase letters, lowercase letters, digits, and special characters
 - returns a string with exactly the requested length
-- does not guarantee that the result passes `isStrongPassword()`
+- always returns a password that passes `isStrongPassword()`
+- throws an error if `length` is less than `8`
 
 Example:
 
