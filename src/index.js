@@ -15,6 +15,7 @@ function generateStrongPassword(length = 12) {
     return strongPassword; 
 } 
 
+// Function to check if a password is strong
 function isStrongPassword(password) { 
     if (password.length < 8) { 
         return false; 
