@@ -1,4 +1,4 @@
-# @untitltedq/password-utilities
+# @untitled/password-utilities
 
 > A small JavaScript utility library for generating and validating passwords.
 
@@ -39,7 +39,7 @@ npm install
 If you want to use the package as a dependency:
 
 ```bash
-npm install @untitltedq/password-utilities
+npm install @untitledq/password-utilities
 ```
 
 ## Usage
@@ -50,7 +50,7 @@ Example:
 const {
   generateStrongPassword,
   isStrongPassword,
-} = require("@untitltedq/password-utilities");
+} = require("@untitledq/password-utilities");
 
 const password = generateStrongPassword(16);
 
@@ -62,7 +62,7 @@ console.log(isStrongPassword(password));
 Example with invalid length:
 
 ```js
-const { generateStrongPassword } = require("@untitltedq/password-utilities");
+const { generateStrongPassword } = require("@untitledq/password-utilities");
 
 generateStrongPassword(6);
 // throws Error: Password length must be at least 8 characters.
@@ -85,7 +85,7 @@ Behavior:
 Example:
 
 ```js
-const { generateStrongPassword } = require("@untitltedq/password-utilities");
+const { generateStrongPassword } = require("@untitledq/password-utilities");
 
 const password = generateStrongPassword(20);
 console.log(password);
@@ -106,7 +106,7 @@ Returns `true` only if the password:
 Example:
 
 ```js
-const { isStrongPassword } = require("@untitltedq/password-utilities");
+const { isStrongPassword } = require("@untitledq/password-utilities");
 
 isStrongPassword("Abcdef1!");
 // true
