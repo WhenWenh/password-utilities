@@ -1,5 +1,5 @@
 {
-  "name": "@untitltedq/password-utilities",
+  "name": "@untitledq/password-utilities",
   "version": "1.0.0",
   "description": "Small JavaScript library that provides password utility functions.",
   "main": "index.js",
