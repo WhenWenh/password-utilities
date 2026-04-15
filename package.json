@@ -13,5 +13,8 @@
     "library"
   ],
   "author": "Wenhao Wen",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^30.3.0"
+  }
 }
